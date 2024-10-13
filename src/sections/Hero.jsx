@@ -58,11 +58,13 @@ export default function Hero() {
         <p className="sm:text-3xl text-2xl font-medium text-white text-center font-generalsans">
           Hi, I am Steve<span className="waving-hand">👋</span>
         </p>
-        <p className="hero_tag text-gray_gradient ">Studying Front-End</p>
+        <p className="hero_tag text-gray_gradient ">
+          Studying Front-End Development
+        </p>
       </div>
       <div className="w-full h-full absolute inset-0">
         {/* <Leva /> */}
-        <Canvas className="w-full h-full mt-4">
+        <Canvas className="w-full h-full mt-10">
           <Suspense fallback={<CanvasLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 30]} />
             <HackerRoom
@@ -71,10 +73,15 @@ export default function Hero() {
               scale={1}
             />
             <group>
-              <Target position={[-8.0,-6.0,3.0]}/>
+              <Target position={[-8.0, -6.0, 3.0]} />
             </group>
-            <ambientLight color= "black" intensity={1} />
-            <directionalLight color="white" position={[-10,7,6]} intensity={4} castShadow/>
+            <ambientLight color="purple" intensity={1} />
+            <directionalLight
+              color="white"
+              position={[-10, 7, 6]}
+              intensity={6}
+              castShadow
+            />
           </Suspense>
         </Canvas>
       </div>

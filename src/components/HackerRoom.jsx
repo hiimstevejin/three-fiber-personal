@@ -623,4 +623,4 @@ export default function HackerRoom(props) {
   );
 }
 
-useGLTF.preload("public/room.gltf");
+useGLTF.preload("/room.gltf");
