@@ -6,9 +6,16 @@ import CanvasLoader from "../components/CanvasLoader";
 import { Leva, useControls } from "leva";
 import Target from "../components/Target";
 import ReactLogo from "../components/ReactLogo";
+import Cube from "../components/Cube";
+import Rings from "../components/Rings";
+import HeroCamera from "../components/HeroCamera";
+import { useMediaQuery } from "react-responsive";
+import Button from "../components/Button";
 // import { useMediaQuery } from "react-responsive";
 
 export default function Hero() {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
   const x = useControls("HackerRoom", {
     positionX: {
       value: 2.5,
@@ -68,15 +75,20 @@ export default function Hero() {
         <Canvas className="w-full h-full mt-10">
           <Suspense fallback={<CanvasLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 30]} />
-            <HackerRoom
-              position={[0, -3, -8]}
-              rotation={[0.4, -0.7, 0]}
-              scale={1}
-            />
-            <group>
-              <Target position={[-8.0, -6.0, 3.0]} />
-              <ReactLogo position={[10,4,-5]}/>
-            </group>
+            <HeroCamera isMobile={isMobile}>
+              <HackerRoom
+                position={[0, -3, -8]}
+                rotation={[0.4, -0.7, 0]}
+                scale={1}
+              />
+              <group>
+                <Target position={[-10.0, -6.0, 3.0]} />
+                <ReactLogo position={[11.0, 4.0, 1.0]} />
+                <Cube position={[11.0, -5.0, 1.0]} />
+                <Rings position={[-20.0, 6.0, 3.0]} />
+              </group>
+            </HeroCamera>
+
             <ambientLight color="purple" intensity={1} />
             <directionalLight
               color="beige"
@@ -86,6 +98,11 @@ export default function Hero() {
             />
           </Suspense>
         </Canvas>
+      </div>
+      <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
+        <a href="#contact" className="w-fit">
+    <Button name="Ready to Work" isBeam containerClass="sm:w-fit w-full sm:min-w-96"/>
+        </a>
       </div>
     </section>
   );
