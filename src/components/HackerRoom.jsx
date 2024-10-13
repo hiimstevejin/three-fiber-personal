@@ -7,7 +7,6 @@ Source: https://sketchfab.com/3d-models/low-poly-80s-hacker-room-081a73b15f104a1
 Title: Low Poly 80's Hacker Room 🕹️
 */
 
-import React from "react";
 import { useGLTF } from "@react-three/drei";
 
 export default function HackerRoom(props) {

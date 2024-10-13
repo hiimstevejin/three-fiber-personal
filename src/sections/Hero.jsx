@@ -2,9 +2,10 @@ import { PerspectiveCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import HackerRoom from "../components/HackerRoom";
 import { Suspense } from "react";
-import CanvasLoader from "./CanvasLoader";
+import CanvasLoader from "../components/CanvasLoader";
 import { Leva, useControls } from "leva";
 import Target from "../components/Target";
+import ReactLogo from "../components/ReactLogo";
 // import { useMediaQuery } from "react-responsive";
 
 export default function Hero() {
@@ -74,11 +75,12 @@ export default function Hero() {
             />
             <group>
               <Target position={[-8.0, -6.0, 3.0]} />
+              <ReactLogo position={[10,4,-5]}/>
             </group>
             <ambientLight color="purple" intensity={1} />
             <directionalLight
-              color="white"
-              position={[-10, 7, 6]}
+              color="beige"
+              position={[-10, 7, 7]}
               intensity={6}
               castShadow
             />
