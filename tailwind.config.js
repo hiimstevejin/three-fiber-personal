@@ -24,7 +24,7 @@ export default {
         },
       },
       backgroundImage: {
-        terminal: "url('/assets/terminal.png')",
+        terminal: "url('/three-fiber-personal/assets/terminal.png')",
       },
     },
   },
