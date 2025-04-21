@@ -10,7 +10,7 @@ Title: Low Poly 80's Hacker Room 🕹️
 import { useGLTF } from "@react-three/drei";
 
 export default function HackerRoom(props) {
-  const { nodes, materials } = useGLTF("room.gltf");
+  const { nodes, materials } = useGLTF(import.meta.env.BASE_URL + "room.gltf");
   return (
     <group {...props} dispose={null}>
       <group position={[0, 0.336, 0]}>
@@ -622,4 +622,4 @@ export default function HackerRoom(props) {
   );
 }
 
-useGLTF.preload("/room.gltf");
+useGLTF.preload(import.meta.env.BASE_URL + "/room.gltf");
